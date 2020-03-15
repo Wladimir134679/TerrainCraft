@@ -1,0 +1,10 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "dirt",
+      "textureName": "dirt",
+      "stackMax": 10
+    }
+  ]
+}
