@@ -12,10 +12,11 @@ public class Assets {
     public static void load(){
         textures = new HashMap<>();
         load("dirt");
+        load("ground");
     }
 
     private static void load(String name){
-        add(name, new TextureRegion(new Texture(name + ".png")));
+        add(name, new TextureRegion(new Texture("textures/" + name + ".png")));
     }
 
     private static void add(String name, TextureRegion reg){

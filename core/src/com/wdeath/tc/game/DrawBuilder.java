@@ -18,6 +18,7 @@ public class DrawBuilder {
     private static CanvasComponent buildCanvas(){
         CanvasComponent component = new CanvasComponent();
         component.canvas = new Canvas(Gdx.graphics.getWidth() / PPM, Gdx.graphics.getHeight() / PPM);
+        component.displayCanvas = new Canvas();
         return component;
     }
 }

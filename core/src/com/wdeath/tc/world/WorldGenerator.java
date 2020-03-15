@@ -45,7 +45,8 @@ public class WorldGenerator {
         }
 
         for(int x = 0; x < ground.getWidth(); x++){
-            for(int y = 0; y < 3; y++){
+            ground.set(2, x, heightPoint[x]);
+            for(int y = 1; y < 2; y++){
                 int yp = heightPoint[x] - y;
                 if(yp < 0)
                     yp = 0;
@@ -70,7 +71,7 @@ public class WorldGenerator {
                     continue;
                 FixtureDef def = new FixtureDef();
                 def.density = 0;
-                def.friction = 0.1f;
+                def.friction = 0.5f;
                 def.restitution = 0.1f;
                 PolygonShape shape = new PolygonShape();
                 Vector2[] vector2s = new Vector2[4];

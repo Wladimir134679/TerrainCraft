@@ -4,7 +4,13 @@
       "id": 1,
       "name": "dirt",
       "textureName": "dirt",
-      "stackMax": 10
+      "stackMax": 15
+    },
+    {
+      "id": 2,
+      "name": "ground",
+      "textureName": "ground",
+      "stackMax": 5
     }
   ]
 }

@@ -94,6 +94,7 @@ project(":android") {
         api "com.badlogicgames.gdx:gdx-controllers-android:$gdxVersion"
 
         compileOnly "org.projectlombok:lombok:1.18.12"
+        annotationProcessor 'org.projectlombok:lombok:1.18.12'
     }
 }
 

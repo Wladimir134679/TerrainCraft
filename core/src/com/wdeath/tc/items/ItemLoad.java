@@ -31,7 +31,7 @@ public class ItemLoad {
         item.setStackMax(obj.getInt("stackMax"));
         item.setTextureName(obj.getString("textureName"));
 
-        log.info("load: " + item.getId() + "/" + item.getName());
+//        log.info("load: " + item.getId() + "/" + item.getName());
 
         Item.add(item);
     }
