@@ -1,12 +1,14 @@
 package com.wdeath.tc;
 
 import com.badlogic.ashley.core.Engine;
+import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Screen;
 import com.wdeath.tc.game.DrawBeginSystem;
 import com.wdeath.tc.game.DrawEndSystem;
 import com.wdeath.tc.game.DrawEntity;
 import com.wdeath.tc.world.WorldBuilder;
 import com.wdeath.tc.world.WorldDrawSystem;
+import com.wdeath.tc.world.WorldGenerator;
 
 public class GameScreen implements Screen {
 
@@ -17,7 +19,8 @@ public class GameScreen implements Screen {
         engine = new Engine();
 
         //singleton entity
-        engine.addEntity(WorldBuilder.build());
+        Entity world = WorldBuilder.build();
+        engine.addEntity(world);
         engine.addEntity(DrawEntity.build());
 
         //all systems
@@ -27,6 +30,9 @@ public class GameScreen implements Screen {
             engine.addSystem(new WorldDrawSystem());
         }
         engine.addSystem(new DrawEndSystem());
+
+        WorldGenerator generator = new WorldGenerator(world);
+        generator.generation();
     }
 
     @Override

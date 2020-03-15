@@ -12,7 +12,7 @@ public class WorldBuilder {
 
     private static WorldLayerComponent getLayers(){
         WorldLayerComponent com = new WorldLayerComponent();
-        com.ground = new WorldLayer(10, 10);
+        com.ground = new WorldLayer(30, 10);
         return com;
     }
 }
