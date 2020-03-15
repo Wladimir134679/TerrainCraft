@@ -1,4 +1,4 @@
-package com.wdeath.tc.game;
+package com.wdeath.tc.game.components;
 
 import com.badlogic.ashley.core.Component;
 import com.wdeath.tc.utils.Canvas;

@@ -1,10 +1,12 @@
-package com.wdeath.tc.world;
+package com.wdeath.tc.world.systems;
 
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.ashley.core.Family;
-import com.wdeath.tc.game.CanvasComponent;
+import com.wdeath.tc.game.components.CanvasComponent;
+import com.wdeath.tc.world.components.WorldPhysicsComponent;
+import com.wdeath.tc.world.components.WorldPhysicsDebugComponent;
 
 public class WorldPhysicsDebugSystem  extends EntitySystem {
 

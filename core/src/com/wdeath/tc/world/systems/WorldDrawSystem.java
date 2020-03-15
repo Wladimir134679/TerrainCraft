@@ -1,4 +1,4 @@
-package com.wdeath.tc.world;
+package com.wdeath.tc.world.systems;
 
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
@@ -6,10 +6,11 @@ import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.wdeath.tc.Assets;
-import com.wdeath.tc.game.CanvasComponent;
-import com.wdeath.tc.game.DrawEntity;
+import com.wdeath.tc.game.components.CanvasComponent;
 import com.wdeath.tc.items.Item;
 import com.wdeath.tc.utils.Canvas;
+import com.wdeath.tc.world.WorldLayer;
+import com.wdeath.tc.world.components.WorldLayerComponent;
 
 public class WorldDrawSystem extends EntitySystem {
 

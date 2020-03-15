@@ -1,9 +1,10 @@
-package com.wdeath.tc.game;
+package com.wdeath.tc.game.systems;
 
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.ashley.core.Family;
+import com.wdeath.tc.game.components.CanvasComponent;
 
 public abstract class AbstractDrawSystem extends EntitySystem {
 

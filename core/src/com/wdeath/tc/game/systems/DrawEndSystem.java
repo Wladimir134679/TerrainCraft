@@ -1,4 +1,6 @@
-package com.wdeath.tc.game;
+package com.wdeath.tc.game.systems;
+
+import com.wdeath.tc.game.components.CanvasComponent;
 
 public class DrawEndSystem extends AbstractDrawSystem {
 

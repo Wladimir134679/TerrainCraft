@@ -2,9 +2,10 @@ package com.wdeath.tc.game;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Gdx;
+import com.wdeath.tc.game.components.CanvasComponent;
 import com.wdeath.tc.utils.Canvas;
 
-public class DrawEntity {
+public class DrawBuilder {
 
     public static final float SIZE_BLOCK_PIXEL = 32f, PPM = 32f;
 

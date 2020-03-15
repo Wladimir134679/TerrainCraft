@@ -6,6 +6,9 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.World;
+import com.wdeath.tc.world.components.WorldLayerComponent;
+import com.wdeath.tc.world.components.WorldPhysicsComponent;
+import com.wdeath.tc.world.components.WorldPhysicsDebugComponent;
 
 public class WorldBuilder {
 

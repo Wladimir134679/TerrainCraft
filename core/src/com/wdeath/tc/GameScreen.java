@@ -3,13 +3,13 @@ package com.wdeath.tc;
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Screen;
-import com.wdeath.tc.game.DrawBeginSystem;
-import com.wdeath.tc.game.DrawEndSystem;
-import com.wdeath.tc.game.DrawEntity;
-import com.wdeath.tc.world.WorldBuilder;
-import com.wdeath.tc.world.WorldDrawSystem;
-import com.wdeath.tc.world.WorldGenerator;
-import com.wdeath.tc.world.WorldPhysicsDebugSystem;
+import com.wdeath.tc.game.systems.DrawBeginSystem;
+import com.wdeath.tc.game.systems.DrawEndSystem;
+import com.wdeath.tc.game.DrawBuilder;
+import com.wdeath.tc.world.*;
+import com.wdeath.tc.world.systems.WorldDrawSystem;
+import com.wdeath.tc.world.systems.WorldPhysicsDebugSystem;
+import com.wdeath.tc.world.systems.WorldPhysicsUpdateSystem;
 
 public class GameScreen implements Screen {
 
@@ -23,9 +23,10 @@ public class GameScreen implements Screen {
         Entity world = WorldBuilder.build();
         //add entity
         engine.addEntity(world);
-        engine.addEntity(DrawEntity.build());
+        engine.addEntity(DrawBuilder.build());
 
         //all systems
+        engine.addSystem(new WorldPhysicsUpdateSystem());
         engine.addSystem(new DrawBeginSystem());
         {
             //DRAW SYSTEMS

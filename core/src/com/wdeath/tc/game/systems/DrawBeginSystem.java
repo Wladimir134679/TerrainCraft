@@ -1,6 +1,6 @@
-package com.wdeath.tc.game;
+package com.wdeath.tc.game.systems;
 
-import com.wdeath.tc.utils.Canvas;
+import com.wdeath.tc.game.components.CanvasComponent;
 
 public class DrawBeginSystem extends AbstractDrawSystem {
 
