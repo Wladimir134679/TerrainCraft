@@ -1,11 +1,12 @@
 package com.wdeath.tc.game;
 
 import com.badlogic.ashley.core.Entity;
+import com.badlogic.gdx.Gdx;
 import com.wdeath.tc.utils.Canvas;
 
 public class DrawEntity {
 
-    public static final float SIZE_BLOCK = 32f;
+    public static final float SIZE_BLOCK_PIXEL = 32f, PPM = 32f;
 
     public static Entity build(){
         Entity entity = new Entity();
@@ -15,7 +16,7 @@ public class DrawEntity {
 
     private static CanvasComponent buildCanvas(){
         CanvasComponent component = new CanvasComponent();
-        component.canvas = new Canvas();
+        component.canvas = new Canvas(Gdx.graphics.getWidth() / PPM, Gdx.graphics.getHeight() / PPM);
         return component;
     }
 }

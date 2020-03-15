@@ -13,7 +13,7 @@ public class Canvas {
         this(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
     }
 
-    public Canvas(int w, int h){
+    public Canvas(float w, float h){
         camera = new OrthographicCamera();
         camera.setToOrtho(false, w, h);
         spriteBatch = new SpriteBatch();

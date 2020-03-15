@@ -2,6 +2,11 @@ package com.wdeath.tc.world;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.math.RandomXS128;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Fixture;
+import com.badlogic.gdx.physics.box2d.FixtureDef;
+import com.badlogic.gdx.physics.box2d.PolygonShape;
+import com.badlogic.gdx.physics.box2d.Shape;
 
 import java.util.Random;
 
@@ -46,6 +51,37 @@ public class WorldGenerator {
                 if(yp >= ground.getHeight())
                     yp = ground.getHeight() - 1;
                 ground.set(1, x, yp);
+            }
+        }
+
+        generatorPhysics();
+    }
+
+    private void generatorPhysics(){
+        WorldLayerComponent wlc = worldEntity.getComponent(WorldLayerComponent.class);
+        WorldLayer ground = wlc.ground;
+        WorldPhysicsComponent wpc = worldEntity.getComponent(WorldPhysicsComponent.class);
+
+        for(int x = 0; x< ground.getWidth(); x++){
+            for(int y = 0; y < ground.getHeight(); y++){
+                int id = ground.get(x, y);
+                if(id == 0)
+                    continue;
+                FixtureDef def = new FixtureDef();
+                def.density = 0;
+                def.friction = 0.1f;
+                def.restitution = 0.1f;
+                PolygonShape shape = new PolygonShape();
+                Vector2[] vector2s = new Vector2[4];
+                vector2s[0] = new Vector2(x, y);
+                vector2s[1] = new Vector2(x, y + 1);
+                vector2s[2] = new Vector2(x + 1, y + 1);
+                vector2s[3] = new Vector2(x + 1, y);
+                shape.set(vector2s);
+                def.shape = shape;
+
+                Fixture fix = wpc.groundBody.createFixture(def);
+                wpc.fixtureGround[x][y] = fix;
             }
         }
     }

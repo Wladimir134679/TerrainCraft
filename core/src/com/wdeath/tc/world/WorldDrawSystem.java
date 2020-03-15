@@ -43,9 +43,9 @@ public class WorldDrawSystem extends EntitySystem {
                 if(textureRegion == null)
                     continue;
 
-                float x = DrawEntity.SIZE_BLOCK * i;
-                float y = DrawEntity.SIZE_BLOCK * j;
-                canvas.getBatch().draw(textureRegion, x, y);
+//                float x = DrawEntity.SIZE_BLOCK_PIXEL * i;
+//                float y = DrawEntity.SIZE_BLOCK_PIXEL * j;
+                canvas.getBatch().draw(textureRegion, i, j, 1, 1);
             }
         }
     }

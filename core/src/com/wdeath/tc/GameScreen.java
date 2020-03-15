@@ -9,6 +9,7 @@ import com.wdeath.tc.game.DrawEntity;
 import com.wdeath.tc.world.WorldBuilder;
 import com.wdeath.tc.world.WorldDrawSystem;
 import com.wdeath.tc.world.WorldGenerator;
+import com.wdeath.tc.world.WorldPhysicsDebugSystem;
 
 public class GameScreen implements Screen {
 
@@ -20,6 +21,7 @@ public class GameScreen implements Screen {
 
         //singleton entity
         Entity world = WorldBuilder.build();
+        //add entity
         engine.addEntity(world);
         engine.addEntity(DrawEntity.build());
 
@@ -30,7 +32,9 @@ public class GameScreen implements Screen {
             engine.addSystem(new WorldDrawSystem());
         }
         engine.addSystem(new DrawEndSystem());
+        engine.addSystem(new WorldPhysicsDebugSystem());
 
+        //World generator
         WorldGenerator generator = new WorldGenerator(world);
         generator.generation();
     }
