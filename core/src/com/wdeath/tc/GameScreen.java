@@ -30,6 +30,8 @@ import java.util.TimerTask;
 @Log4j2
 public class GameScreen implements Screen {
 
+    private String value;
+
     private Engine engine;
     Canvas canvas;
     BitmapFont font;
